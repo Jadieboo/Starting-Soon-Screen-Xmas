@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+
+body {
+    background-color: black;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+.tree-container {
+    width: 325px;
+    height: 200px;
+    display: flex;
+    position: relative;
+}
+
+/* tree sizing and position */
+.tree {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    /* background-color: snow; */
+}
+
+.inner {
+    position: absolute;
+    top: 4.5%;
+    left: 8.5%;
+    width: 0px;
+    height: 0px;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid black;
+    z-index: 1;
+
+    animation: colorChange infinite 2s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+.outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 0px;
+	border-left: 35px solid transparent;
+	border-right: 35px solid transparent;
+	border-bottom: 65px solid  rgb(8, 152, 8);
+}
+
+/* second inner layer */
+.inner:nth-child(2) {
+    top: 15%;
+}
+
+/* last inner layer */
+.inner:nth-child(3) {
+    top: 28%;
+}
+
+/* second outer layer */
+.outer:nth-child(5) {
+    top: 10%
+}
+
+/* last outer layer */
+.outer:nth-child(6) {
+    top: 22%;
+    
+}
+
+/* positioning first tree */
+.tree:nth-child(1) {
+    top: 4%;
+    left: 1%;
+}
+
+/* positioning second tree */
+.tree:nth-child(2) {
+    top: 0;
+    right: 10%;
+    z-index: 1;
+}
+
+/* resizing middle tree (bigger) */
+.tree:nth-child(2) .inner {
+    border-left: 35px solid transparent;
+	border-right: 35px solid transparent;
+	border-bottom: 57px solid black;
+}
+
+.tree:nth-child(2) .outer {
+    border-left: 45px solid transparent;
+	border-right: 45px solid transparent;
+	border-bottom: 72px solid  rgb(8, 152, 8);
+}
+
+/* spacing out the inner layers */
+.tree:nth-child(2) .inner:nth-child(2) {
+    top: 18%;
+}
+
+.tree:nth-child(2) .inner:nth-child(3) {
+    top: 32%;
+}
+
+.tree:nth-child(2) .outer:nth-child(5) {
+    top: 13%
+}
+
+.tree:nth-child(2) .outer:nth-child(6) {
+    top: 26%;
+}
+
+/* positioning third tree */
+.tree:nth-child(3) {
+    top: 4%;
+    right: 15%;
+}
+
+/* Animation for tree colours */
+
+.tree:nth-child(1) .inner {
+    animation: colorChange infinite 8s;
+    /* animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); */
+
+}
+
+.tree:nth-child(2) .inner {
+    animation: colorChange infinite 8s;
+    animation-delay: 2s;
+    /* animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); */
+
+}
+
+.tree:nth-child(3) .inner {
+    animation: colorChange infinite 8s;
+    animation-delay: 4s;
+    /* animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); */
+
+}
+
+@keyframes colorChange {
+    0%, 24% {
+        border-bottom-color: black;
+    }
+
+    25%, 49% {
+        border-bottom-color: red;
+    }
+
+    50%, 74% {
+        border-bottom-color: blue;
+    }
+
+    75%, 100% {
+        border-bottom-color: snow;
+    }
+    
+}
+
+/* Starting Soon text */
+h1 {
+    font-family: 'Mountains of Christmas', cursive, sans-serif;
+    color: aliceblue;
+    font-size: 4rem;
+
+    animation: wiggle infinite 1s;
+}
+
+@keyframes wiggle {
+
+    0%, 24% {
+        transform: rotate(2deg);
+    }
+
+    25%, 49% {
+        transform: rotate(-2deg);
+    }
+
+    50%, 74% {
+        transform: rotate(2deg);
+    }
+
+    75%, 100% {
+        transform: rotate(-2deg);
+    }
+    
+}
